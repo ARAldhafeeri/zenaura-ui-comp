@@ -27,7 +27,7 @@ dark:hover:bg-dark-gray2
 dark:bg-dark-gray1
 """
 
-main_content = "min-h-screen  p-16 relative bg-light-white dark:bg-dark-gray1 mx-auto flex flex-col gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20 "
+main_content = "min-h-screen  p-4 relative bg-light-white dark:bg-dark-gray1 mx-auto flex flex-col gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20 "
 
 def with_theme_colors(class_name):
   return f"{class_name} text-light-gray1 hover:text-light-green dark:text-dark-page1 dark:hover:text-dark-gray2"

@@ -215,7 +215,7 @@ def Span(class_name, text=None):
 
 # styled components presentation 
 
-def StyledComponentPresentation(header, paragraph, api_ref_url, preview, code, active_tab="1"):
+def StyledComponentPresentation(header, paragraph, api_ref_url, preview, code, active_tab="1", active_tab_method=""):
 	# styled component intro section header, short paragraph, 
 	intro_section = Div("flex flex-col py-7", [
 		Header1(header, with_theme_colors_text_no_hover("")),
@@ -229,7 +229,7 @@ def StyledComponentPresentation(header, paragraph, api_ref_url, preview, code, a
 				"1", 
 				"Preview", 
 				active_tab, 
-				"components.set_active_tab", 
+				active_tab_method, 
 				with_theme_colors_text_no_hover(
 					f"px-4 py-2 transition-all duration-300"
 					)
@@ -238,7 +238,7 @@ def StyledComponentPresentation(header, paragraph, api_ref_url, preview, code, a
 				"2", 
 				"Code", 
 				active_tab, 
-				"components.set_active_tab", 
+				active_tab_method, 
 				with_theme_colors_text_no_hover(
 					f"px-4 py-2 transition-all duration-300"
 					)
@@ -247,7 +247,7 @@ def StyledComponentPresentation(header, paragraph, api_ref_url, preview, code, a
 	
 	tabs_content = [
 			TabContent("1",  active_tab, preview),
-			TabContent("2",  active_tab,  code)
+			TabContent("2",  active_tab,  CodeBlock(code))
 		]
 	
 	return Div("", 

@@ -35,3 +35,10 @@
   background: #76ABAE;
   border-radius: 4px;
 }
+
+.codeWrapper {
+  overflow: scroll;
+  height: 75vw;
+  border-radius: 50px;
+  
+}

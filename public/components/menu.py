@@ -15,6 +15,10 @@ class MenuExample(Component):
   async def toggle_dropdown(self, _):
     self.open = not self.open
 
+  @mutator
+  async def toggle_tabs(self, _):
+    self.active_tab = "2" if self.active_tab == "1" else "1"
+
   def render(self):
     menu = Menu(
         Button(
@@ -94,6 +98,7 @@ class MenuExample(Component):
       "url",
       menu,
       menu_component_code,
-      self.active_tab
+      self.active_tab,
+      "menu.toggle_tabs"
     )
     ])
