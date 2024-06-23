@@ -31,12 +31,6 @@ def SideBarNavigation():
 		nav_item_style,
 		"side_nav_bar.set_active_comp",
 		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Dropdown", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		)
 	]
 
 def SideBarDataEntry():
@@ -52,18 +46,6 @@ def SideBarDataEntry():
 		NavItemTextNameFactory(
          "javascript:;", 
          "Input", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "InputNumber", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Checkbox", 
          nav_item_style,
          "side_nav_bar.set_active_comp"
 		),
