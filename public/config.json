@@ -23,8 +23,8 @@
 
           "./public/components/common.py",
           "./public/components/menu.py",
-          "./public/components/sidebar.py"
-
+          "./public/components/sidebar.py",
+          "./public/components/breadcrumbs.py"
         ]
       }
     ],

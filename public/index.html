@@ -147,6 +147,39 @@ class MenuExample(Component):
       self.open
     )
 
+</code></pre></div></div></div></div></div></div></div></div></div><div hidden data-zenaura="b32e668d"><div data-zenaura="8af5db2b" class="min-h-screen  p-4 relative bg-light-white dark:bg-dark-gray1 mx-auto flex flex-col gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20 "><div data-zenaura="8af5db2b00" class=""><div data-zenaura="8af5db2b0010" class="flex flex-col py-7"><h1 data-zenaura="8af5db2b001020" class=" text-light-gray1 dark:text-dark-page1">Breadcrumbs</h1><p data-zenaura="8af5db2b001021" class=" text-light-gray1 dark:text-dark-page1">Display a menu to the user - triggered by py-click</p><a data-zenaura="8af5db2b001022" class="
+inline-flex items-center justify-center 
+whitespace-nowrap text-sm font-medium 
+transition-colors focus-visible:outline-none 
+focus-visible:ring-1 focus-visible:ring-ring 
+disabled:pointer-events-none disabled:opacity-50 
+text-primary-foreground shadow 
+h-9 px-4 py-2 rounded-[6px]
+m-1 bg-light-gray1 text-light-white
+hover:bg-light-green
+dark:text-dark-page1
+dark:bg-dark-black
+dark:hover:bg-dark-gray2
+w-40"href="url"  target="_blank">Menu API Refrence</a></div><div data-zenaura="8af5db2b0011" class="bg-gray-100 font-sans"><div data-zenaura="8af5db2b001120" class="p-8"><div data-zenaura="8af5db2b00112030" class=""><div data-zenaura="8af5db2b0011203040" class="flex  border-b-2 border-light-green dark:border-dark-black"><button data-zenaura="8af5db2b001120304050" class="px-4 py-2 transition-all duration-300 text-light-gray1 dark:text-dark-page1 me-2 inline-block p-5 border-b-2 border-light-green border-spacing-2 dark:border-dark-page1"py-click="breadcrumbs.toggle_tabs" name="1"  py-click="None">Preview</button><button data-zenaura="8af5db2b001120304051" class="px-4 py-2 transition-all duration-300 text-light-gray1 dark:text-dark-page1"py-click="breadcrumbs.toggle_tabs" name="2"  py-click="None">Code</button></div><div data-zenaura="8af5db2b0011203041" class="mt-3"><div data-zenaura="8af5db2b001120304150" class="block transition-all duration-300 p-4"><ol data-zenaura="8af5db2b00112030415060" class="flex w-full flex-wrap items-center rounded-md py-2 px-4"><li data-zenaura="8af5db2b0011203041506070" class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal antialiased transition-colors duration-300 text-light-gray1 hover:text-light-green dark:text-dark-page1 dark:hover:text-dark-gray2 "><a data-zenaura="8af5db2b001120304150607080" class="opacity-60" href="nav.docs"><span data-zenaura="8af5db2b00112030415060708090" class="">Docs</span></a></li><span data-zenaura="8af5db2b0011203041506071" class="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal antialiased">&gt;</span><li data-zenaura="8af5db2b0011203041506072" class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal antialiased transition-colors duration-300 text-light-gray1 hover:text-light-green dark:text-dark-page1 dark:hover:text-dark-gray2 "><a data-zenaura="8af5db2b001120304150607280" class="opacity-60" href="nav.Components"><span data-zenaura="8af5db2b00112030415060728090" class="">Components</span></a></li><span data-zenaura="8af5db2b0011203041506071" class="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal antialiased">&gt;</span><li data-zenaura="8af5db2b0011203041506074" class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal antialiased transition-colors duration-300 text-light-gray1 hover:text-light-green dark:text-dark-page1 dark:hover:text-dark-gray2 "><a data-zenaura="8af5db2b001120304150607480" class="opacity-60" href="nav.BreadCrumbs"><span data-zenaura="8af5db2b00112030415060748090" class="">BreadCrumbs</span></a></li><span data-zenaura="8af5db2b0011203041506071" class="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal antialiased">&gt;</span></ol></div><div data-zenaura="8af5db2b001120304151" class="hidden transition-all duration-300 p-4"><div data-zenaura="8af5db2b00112030415160" class="codeWrapper"><pre data-zenaura="8af5db2b0011203041516070"><code data-zenaura="8af5db2b001120304151607080" class="language-python">
+from zenaura.ui.commons import *
+from zenaura.ui.breadcrumbs import BreadCrumbs
+
+class BreadcrumbsExample(Component):
+  def __init__(self):
+    self.active_tab = &quot;1&quot;
+
+  @mutator
+  async def toggle_tabs(self, _):
+    self.active_tab = &quot;2&quot; if self.active_tab == &quot;1&quot; else &quot;1&quot;
+
+  def render(self):
+    return BreadCrumbs(
+      [
+        (&quot;Docs&quot;, &quot;nav.docs&quot;),
+        (&quot;Components&quot;, &quot;nav.Components&quot;),
+        (&quot;BreadCrumbs&quot;, &quot;nav.BreadCrumbs&quot;)
+      ]
+    )
 </code></pre></div></div></div></div></div></div></div></div></div>
     </div>
   

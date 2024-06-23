@@ -25,6 +25,44 @@ def Section(children, class_name="intro"):
 def HR():
 	return Builder("hr").with_attribute('class', "w-full border-b-1 border-light-green dark:border-gray-700 ").build()
 
+def OL(children, attrs):
+	"""
+		unordered list
+		args:
+			children - li elements 
+			attrs - dictionary of attributes
+		retrun:
+			<ol>
+				<li></li>
+				<li></li>
+			</ol>
+	"""
+	return Builder("ol").with_attributes(**attrs).with_children(*children).build()
+
+def LI(child, attrs):
+	"""
+	list element li tag
+	args:
+			children - any html element
+			attrs - dictionary of attributes
+		retrun:
+			<li attributes>child</li>
+	"""
+	return Builder("li").with_attributes(**attrs).with_child(child).build()
+
+
+def A(child, attrs):
+	"""
+	list element A tag
+	args:
+			child - any html element
+			attrs - dictionary of attributes
+		retrun:
+			<a attributes>child</a>
+	"""
+
+	return Builder("a").with_attributes(**attrs).with_child(child).build()
+
 # features menu
 
 def Paragraph(text, class_name=None):
@@ -260,30 +298,3 @@ def StyledComponentPresentation(header, paragraph, api_ref_url, preview, code, a
 		]
 	)
   
-
-# Menu 
-
-def Menu(main_btn : Button, children: List[ButtonWithAttrsChildren], show : bool) -> "Menu":
-	"""
-		Display a menu to the user - triggered by py-click
-
-		args : 
-			main_btn -> button used to toggle dropdown menu on click.
-			children -> menu children 
-			show -> used to toggle menu visibility
-		return : 
-			Togglable menu with options
-	"""
-
-	menu = Div(
-		"absolute right-0 z-20 w-56 py-2 mt-2 overflow-hidden bg-white rounded-md shadow-xl dark:bg-dark-gray1" + (" hidden" if not show else ""),
-		children
-	)
-
-	return Div("flex justify-center", [
-		Div("relative inline-block mb-20", [
-			main_btn, 
-			menu
-
-		])
-	])

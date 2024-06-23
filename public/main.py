@@ -9,6 +9,7 @@ from public.routes import ClientRoutes
 from public.components.sidebar import Sidebar
 # styled components in component page
 from public.components.menu import MenuExample
+from public.components.breadcrumbs import BreadcrumbsExample
 
 try :
     from pyscript import window, document
@@ -27,9 +28,11 @@ side_nav_bar = Sidebar(router)
 
 # styled components page
 menu = MenuExample()
+breadcrumbs = BreadcrumbsExample()
 
 # App and routing
 menu_page = Page([menu])
+breadcrumbs_page = Page([breadcrumbs])
 
 
 routes = [
@@ -37,6 +40,11 @@ routes = [
         "menu component",
         ClientRoutes.menu.value,
         menu_page
+    ), 
+    (
+        "breadcrumbs component",
+        ClientRoutes.breadcrumbs.value,
+        breadcrumbs_page
     )
 ]
 

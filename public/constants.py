@@ -87,3 +87,25 @@ class MenuExample(Component):
     )
 
 """
+
+breadcrumbs_code = """
+from zenaura.ui.commons import *
+from zenaura.ui.breadcrumbs import BreadCrumbs
+
+class BreadcrumbsExample(Component):
+  def __init__(self):
+    self.active_tab = "1"
+
+  @mutator
+  async def toggle_tabs(self, _):
+    self.active_tab = "2" if self.active_tab == "1" else "1"
+
+  def render(self):
+    return BreadCrumbs(
+      [
+        ("Docs", "nav.docs"),
+        ("Components", "nav.Components"),
+        ("BreadCrumbs", "nav.BreadCrumbs")
+      ]
+    )
+"""
