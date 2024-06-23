@@ -36,19 +36,7 @@ def SideBarNavigation():
          "Dropdown", 
          nav_item_style,
          "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-		"javascript:;", 
-		"Steps", 
-		nav_item_style,
-		"side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Steps", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
+		)
 	]
 
 def SideBarDataEntry():
@@ -250,69 +238,22 @@ def SideBarOthers():
          "Affix", 
          nav_item_style,
          "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Anchor", 
-         nav_item_style,
-        "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "BackTop", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Divider", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Drawer", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Image", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),   
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "List", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Mention", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Rate", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),   
+		)
   ]
 
 def SidebarPresentational():
-	return Div(
-		"flex flex-col float-left space-y-2 w-1/5 h-screen p-2 overflow-y-scroll bg-light-white dark:bg-dark-gray1", 
-		# add more nav items here
-		[
-			# Navigation
-			*SideBarNavigation(),
+  print(len(SideBarNavigation()) + len(SideBarDataEntry()) + len(SideBarDataDisplay()) + len(SideBarFeedBack()) +len(SideBarOthers()))
+  return Div(
+    "flex flex-col float-left space-y-2 w-1/5 h-screen p-2 overflow-y-scroll bg-light-white dark:bg-dark-gray1", 
+    # add more nav items here
+    [
+      # Navigation
+      *SideBarNavigation(),
       *SideBarDataEntry(),
-			*SideBarDataDisplay(),
+      *SideBarDataDisplay(),
       *SideBarFeedBack(),
       *SideBarOthers()
-		]
-	)
+    ]
+  )
 
 

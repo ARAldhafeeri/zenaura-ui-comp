@@ -30,7 +30,9 @@ def BreadCrumbs(
   """
   crumbs = []
   sep = Span(sep_class, seprator)
-  for title, handler in breadcrumbs:
+  n = len(breadcrumbs)
+  for i in range(n):
+    title, handler  = breadcrumbs[i]
     crumb = LI(
       A(
         Span(span_class, title),
@@ -39,7 +41,8 @@ def BreadCrumbs(
       {"class": li_class}
     )
     crumbs.append(crumb)
-    crumbs.append(sep)
+    if i != n - 1:
+      crumbs.append(sep)
   return OL(crumbs, {"class" : ol_class})
 
 class BreadcrumbsExample(Component):
@@ -61,7 +64,7 @@ class BreadcrumbsExample(Component):
     return Div(main_content, [
       StyledComponentPresentation(
       "Breadcrumbs",
-      "Display a menu to the user - triggered by py-click",
+      "Display the path to the current resources as hierarchy of links",
       "url",
       breadcrumbs,
       breadcrumbs_code,
