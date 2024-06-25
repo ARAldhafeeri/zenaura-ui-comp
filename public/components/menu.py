@@ -30,6 +30,18 @@ def Menu(main_btn : Button, children: List[ButtonWithAttrsChildren], show : bool
 		])
 	])
 
+menu_items_cls = with_theme_colors(
+   "flex hover:bg-light-hover dark:hover:bg-dark-hover overflow-auto w-full  items-center  items-center p-2 mt-2 text-sm"
+)
+menu_items_span_cls = "text-light-gray1 dark:text-dark-page1"
+menu_items = [
+  ( menu_items_cls, {}, menu_items_span_cls, "Settings" ),
+  ( menu_items_cls, {}, menu_items_span_cls, "Keyboard shortcuts" ),
+  ( menu_items_cls, {}, menu_items_span_cls, "Company profile" ),
+  ( menu_items_cls, {}, menu_items_span_cls, "Team" ),
+  ( menu_items_cls, {}, menu_items_span_cls, "Help" ),
+  ( menu_items_cls, {}, menu_items_span_cls, "Sign out" ),
+]
 
 class MenuExample(Component):
   def __init__(self):
@@ -46,14 +58,26 @@ class MenuExample(Component):
     self.active_tab = "2" if self.active_tab == "1" else "1"
 
   def render(self):
-    menu = Menu(
-        Button(
+
+    regular_menu_btns = [ ]
+
+    for class_names, attrs, span_class, span_text in menu_items:
+      menu_item =  ButtonWithAttrsChildren(
+          class_names, attrs,
+        [
+          Span( span_class, span_text),
+        ]
+      ) 
+      regular_menu_btns.append(HR())
+      regular_menu_btns.append(menu_item)
+
+    main_btn = Button(
               "relative z-10 flex items-center p-2 text-sm text-gray-600 bg-white border border-transparent rounded-md focus:border-blue-500 focus:ring-opacity-40 dark:focus:ring-opacity-40 focus:ring-blue-300 dark:focus:ring-blue-400 focus:ring dark:text-white dark:bg-gray-800 focus:outline-none",
               "open",
               "menu.toggle_dropdown",
-        ),
-        [
-        ButtonWithAttrsChildren(
+        )
+    
+    custom_profile_btn = ButtonWithAttrsChildren(
               with_theme_colors("flex hover:bg-light-hover dark:hover:bg-dark-hover overflow-auto w-full  items-center  items-center p-2 mt-2 text-sm"), {},
             [
               Image(
@@ -66,55 +90,10 @@ class MenuExample(Component):
                   Paragraph("janedoe@exampl.com", "text-sm text-gray-500 dark:text-gray-400")
               ])
             ] 
-        ),
-        HR(),
-        ButtonWithAttrsChildren(
-            with_theme_colors("flex hover:bg-light-hover dark:hover:bg-dark-hover overflow-auto w-full  items-center  items-center p-2 mt-2 text-sm"), {},
-          [
-            Span("text-light-gray1 dark:text-dark-page1", "Settings")
-          ] 
-        ),
-        HR(),
-        ButtonWithAttrsChildren(
-            with_theme_colors("flex hover:bg-light-hover dark:hover:bg-dark-hover overflow-auto w-full  items-center  items-center p-2 mt-2 text-sm"), {},
-          [
-            Span("text-light-gray1 dark:text-dark-page1", "Keyboard shortcuts")
-          ] 
-        ),
-        HR(),
-        ButtonWithAttrsChildren(
-            with_theme_colors("flex hover:bg-light-hover dark:hover:bg-dark-hover overflow-auto w-full  items-center  items-center p-2 mt-2 text-sm"), {},
-          [
-            Span("text-light-gray1 dark:text-dark-page1", "Company profile")
-          ] 
-        ),
-        ButtonWithAttrsChildren(
-            with_theme_colors("flex hover:bg-light-hover dark:hover:bg-dark-hover overflow-auto w-full  items-center  items-center p-2 mt-2 text-sm"), {},
-          [
-            Span("text-light-gray1 dark:text-dark-page1", "Team")
-          ] 
-        ),
-        ButtonWithAttrsChildren(
-            with_theme_colors("flex hover:bg-light-hover dark:hover:bg-dark-hover overflow-auto w-full  items-center  items-center p-2 mt-2 text-sm"), {},
-          [
-            Span("text-light-gray1 dark:text-dark-page1", "Invite colleagues")
-          ] 
-        ),
-        HR(),
-        ButtonWithAttrsChildren(
-            with_theme_colors("flex hover:bg-light-hover dark:hover:bg-dark-hover overflow-auto w-full  items-center  items-center p-2 mt-2 text-sm"), {},
-          [
-            Span("text-light-gray1 dark:text-dark-page1", "Help")
-          ] 
-        ),
-        HR(),
-        ButtonWithAttrsChildren(
-            with_theme_colors("flex hover:bg-light-hover dark:hover:bg-dark-hover overflow-auto w-full  items-center  items-center p-2 mt-2 text-sm"), {},
-          [
-            Span( "text-light-gray1 dark:text-dark-page1", "Sign Out")
-          ] 
-        ),
-      ],
+        )
+    menu = Menu(
+      main_btn, 
+      [custom_profile_btn, *regular_menu_btns],
       self.open
     )
     return Div(main_content, [

@@ -10,6 +10,8 @@ from public.components.sidebar import Sidebar
 # styled components in component page
 from public.components.menu import MenuExample
 from public.components.breadcrumbs import BreadcrumbsExample
+from public.components.button import ButtonExample
+from public.components.input import InputExample
 
 try :
     from pyscript import window, document
@@ -29,36 +31,43 @@ side_nav_bar = Sidebar(router)
 # styled components page
 menu = MenuExample()
 breadcrumbs = BreadcrumbsExample()
-
-# App and routing
-menu_page = Page([menu])
-breadcrumbs_page = Page([breadcrumbs])
-
+button = ButtonExample()
+input = InputExample()
 
 routes = [
-    (
-        "menu component",
-        ClientRoutes.menu.value,
-        menu_page
-    ), 
-    (
-        "breadcrumbs component",
-        ClientRoutes.breadcrumbs.value,
-        breadcrumbs_page
-    )
+  (
+    "menu component",
+    ClientRoutes.menu.value,
+    Page([menu])
+  ), 
+  (
+    "breadcrumbs component",
+    ClientRoutes.breadcrumbs.value,
+    Page([breadcrumbs])
+  ),
+  (
+    "button component",
+    ClientRoutes.button.value,
+    Page([button])
+  ),
+  (
+    "input component",
+    ClientRoutes.input.value,
+    Page([input])
+  )
 ]
 
 for title, path, page in routes:
-    router.add_route(Route(
-        title=title,
-        path=path,
-        page=page
-    ))
+  router.add_route(Route(
+      title=title,
+      path=path,
+      page=page
+  ))
 
 my_app_layout = Layout(
-    top= [side_nav_bar], 
-    routes=router.routes,
-    bottom=[]
+  top= [side_nav_bar], 
+  routes=router.routes,
+  bottom=[]
 )
 
 

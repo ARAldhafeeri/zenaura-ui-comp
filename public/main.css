@@ -38,7 +38,6 @@
 
 .codeWrapper {
   overflow: scroll;
-  height: 75vw;
+  height: 700px;
   border-radius: 50px;
-  
 }

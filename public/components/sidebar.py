@@ -51,43 +51,7 @@ def SideBarDataEntry():
 		),
 		NavItemTextNameFactory(
          "javascript:;", 
-         "Radio", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
          "Select", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Switch", 
-         nav_item_style,
-        "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Slider", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "DatePicker", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "TimePicker", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Upload", 
          nav_item_style,
          "side_nav_bar.set_active_comp"
 		),
@@ -104,12 +68,6 @@ def SideBarDataDisplay():
 		Header1("Data Display", category_class_name),
 		NavItemTextNameFactory(
          "javascript:;", 
-         "Avatar", 
-         nav_item_style,
-        "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
          "Badge", 
          nav_item_style,
          "side_nav_bar.set_active_comp"
@@ -117,18 +75,6 @@ def SideBarDataDisplay():
 		NavItemTextNameFactory(
          "javascript:;", 
          "Card", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Carousel", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Collapse", 
          nav_item_style,
          "side_nav_bar.set_active_comp"
 		),
@@ -146,19 +92,7 @@ def SideBarDataDisplay():
 		),
 		NavItemTextNameFactory(
          "javascript:;", 
-         "Slider", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
          "Table", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Tree", 
          nav_item_style,
          "side_nav_bar.set_active_comp"
 		),
@@ -190,26 +124,7 @@ def SideBarFeedBack():
          "Notification", 
          nav_item_style,
          "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Progress", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Spin", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Skeleton", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		),      
+		)   
   ]
 
 def SideBarOthers():
