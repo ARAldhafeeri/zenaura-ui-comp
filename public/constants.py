@@ -25,15 +25,10 @@ class MenuExample(Component):
   def __init__(self):
     self.open = False
     self.name = "menu"
-    self.active_tab = "1"
 
   @mutator
   async def toggle_dropdown(self, _):
     self.open = not self.open
-
-  @mutator
-  async def toggle_tabs(self, _):
-    self.active_tab = "2" if self.active_tab == "1" else "1"
 
   def render(self):
 
@@ -84,13 +79,6 @@ from zenaura.client.component import Component
 from zenaura.client.mutator import mutator
 
 class BreadcrumbsExample(Component):
-  def __init__(self):
-    self.active_tab = "1"
-
-  @mutator
-  async def toggle_tabs(self, _):
-    self.active_tab = "2" if self.active_tab == "1" else "1"
-
   def render(self):
     return BreadCrumbs(
       [
@@ -145,3 +133,130 @@ class InputExample(Component):
         }
     )
 """
+
+
+select_code = """
+from zenaura.ui.commons import *
+from zenaura.ui.select import Select, Option
+from zenaura.client.component import Component
+from zenaura.client.mutator import mutator
+
+class SelectExample(Component):
+  def __init__(self):
+    self.state = {"select" : ""}
+
+  def update_state(self, field, value):
+    self.state[field] = value
+
+  def handle_input(self, event):
+    field = event.target.name
+    value = event.target.value
+    self.update_state(field, value)
+    print(self.state)
+    
+  def render(self):
+    return  Select(
+      "Email: ",
+      {
+        "name": "select",
+        "py-change": "select.change",
+      },
+      [
+         Option("Volvo", {"value": "volvo"}),
+         Option("Saab", {"value": "saab"}),
+         Option("Audi", {"value": "audi"})
+      ]
+    )
+"""
+
+form_code = """ 
+from zenaura.ui.commons import *
+from zenaura.ui.form import Form 
+from zenaura.ui.input import Input
+from zenaura.ui.button import Button 
+from zenaura.client.component import Component
+from zenaura.client.mutator import mutator
+
+class FormExample(Component):
+  def __init__(self):
+    self.state = {
+      "name": "",
+      "email": "",
+      "message": ""
+    }
+
+  def update_state(self, field, value):
+    self.state[field] = value
+
+  def handle_input(self, event):
+      field = event.target.name
+      value = event.target.value
+      self.update_state(field, value)
+      print(self.state)
+
+  def submit(self, event):
+    event.preventDefault()
+    print("Form submitted with:", self.state)
+    
+  def render(self):
+    return Form(
+      {},
+      [
+      Input(
+        "Name: ",
+        {
+          "name": "name", "py-change": "form.handle_input", 
+          "type": "text", "placeholder": "enter your name.."
+        }
+      ), 
+      Input(
+        "Email: ",
+        {
+          "name": "email", "py-change": "form.handle_input", 
+          "type": "text", "placeholder": "enter email.."
+        }
+      ), 
+      Input(
+        "Message: ",
+        {
+          "name": "message", "py-change": "form.handle_input", 
+          "type": "text", "placeholder": "enter a message.."
+        }
+      ),
+      Button(btn_one_class, "submit", "form.submit")
+      ],
+      "form.submit"
+    )
+"""
+
+badge_code = """ 
+from zenaura.ui.commons import *
+from zenaura.ui.badge import Badge
+from zenaura.client.component import Component
+
+class BadgeExample(Component):
+  def render(self):
+    return Badge("La ilaha illa Allah", {})
+"""
+
+card_code = """ 
+from zenaura.ui.commons import *
+from zenaura.ui.card import Card
+from zenaura.ui.commons import Header, Paragraph
+from zenaura.client.component import Component
+
+class BadgeExample(Component):
+  def render(self):
+    return Card(
+      [
+ Header1("The yearly Event", "text-light-gray1 dark:text-dark-page1"), 
+        Paragraph(
+          "The yearly event start at July the start of each year!",
+            "text-light-gray1 dark:text-dark-page1"
+        )
+      ], 
+      {}
+    )
+"""
+
+

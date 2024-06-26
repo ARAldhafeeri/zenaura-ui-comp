@@ -13,6 +13,10 @@ DEVSERVER = DevServer(app, port=5000, debug=True)
 @DEVSERVER.app.route(ClientRoutes.breadcrumbs.value)
 @DEVSERVER.app.route(ClientRoutes.button.value)
 @DEVSERVER.app.route(ClientRoutes.input.value)
+@DEVSERVER.app.route(ClientRoutes.select.value)
+@DEVSERVER.app.route(ClientRoutes.form.value)
+@DEVSERVER.app.route(ClientRoutes.badge.value)
+@DEVSERVER.app.route(ClientRoutes.card.value)
 def root():
     try:
         return render_template("index.html")

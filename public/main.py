@@ -12,6 +12,11 @@ from public.components.menu import MenuExample
 from public.components.breadcrumbs import BreadcrumbsExample
 from public.components.button import ButtonExample
 from public.components.input import InputExample
+from public.components.select import SelectExample
+from public.components.form import FormExample
+from public.components.badge import BadgeExample
+from public.components.card import CardExample
+
 
 try :
     from pyscript import window, document
@@ -33,6 +38,10 @@ menu = MenuExample()
 breadcrumbs = BreadcrumbsExample()
 button = ButtonExample()
 input = InputExample()
+select = SelectExample()
+form = FormExample()
+badge = BadgeExample()
+card = CardExample()
 
 routes = [
   (
@@ -54,7 +63,28 @@ routes = [
     "input component",
     ClientRoutes.input.value,
     Page([input])
-  )
+  ), 
+  (
+    "select component",
+    ClientRoutes.select.value,
+    Page([select])
+  ),
+  (
+    "form component",
+    ClientRoutes.form.value,
+    Page([form])
+  ),
+  (
+    "badge component",
+    ClientRoutes.badge.value,
+    Page([badge])
+  ),
+  (
+    "card component",
+    ClientRoutes.card.value,
+    Page([card])
+  ),
+
 ]
 
 for title, path, page in routes:
@@ -73,4 +103,6 @@ my_app_layout = Layout(
 
 # sync layout component lifecycle methods
 router.layout = my_app_layout
+
+event_loop.run_until_complete(router.navigate("/menu"))
 

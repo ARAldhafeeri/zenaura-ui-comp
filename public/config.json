@@ -26,7 +26,11 @@
           "./public/components/sidebar.py",
           "./public/components/breadcrumbs.py",
           "./public/components/button.py",
-          "./public/components/input.py"
+          "./public/components/input.py",
+          "./public/components/select.py",
+          "./public/components/form.py",
+          "./public/components/badge.py",
+          "./public/components/card.py"
         ]
       }
     ],

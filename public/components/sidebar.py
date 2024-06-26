@@ -86,12 +86,6 @@ def SideBarDataDisplay():
 		),
 		NavItemTextNameFactory(
          "javascript:;", 
-         "Tag", 
-         nav_item_style,
-        "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
          "Table", 
          nav_item_style,
          "side_nav_bar.set_active_comp"

@@ -6,3 +6,7 @@ class ClientRoutes(Enum):
     home="/"
     button="/button"
     input="/input"
+    select="/select"
+    form="/form"
+    badge="/badge"
+    card="/card"
