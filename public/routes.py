@@ -10,3 +10,5 @@ class ClientRoutes(Enum):
     form="/form"
     badge="/badge"
     card="/card"
+    popover="/popover"
+    modal="/modal"

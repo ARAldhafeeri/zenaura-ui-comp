@@ -16,7 +16,8 @@ from public.components.select import SelectExample
 from public.components.form import FormExample
 from public.components.badge import BadgeExample
 from public.components.card import CardExample
-
+from public.components.popover import PopoverExample
+from public.components.modal import ModalExample
 
 try :
     from pyscript import window, document
@@ -42,6 +43,8 @@ select = SelectExample()
 form = FormExample()
 badge = BadgeExample()
 card = CardExample()
+popover = PopoverExample()
+modal = ModalExample()
 
 routes = [
   (
@@ -84,7 +87,16 @@ routes = [
     ClientRoutes.card.value,
     Page([card])
   ),
-
+  (
+    "popover component",
+    ClientRoutes.popover.value,
+    Page([popover])
+  ),
+  (
+    "modal component",
+    ClientRoutes.modal.value,
+    Page([modal])
+  ),
 ]
 
 for title, path, page in routes:

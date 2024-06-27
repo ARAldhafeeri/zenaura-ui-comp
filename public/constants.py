@@ -260,3 +260,41 @@ class BadgeExample(Component):
 """
 
 
+popover_code = """ 
+from zenaura.ui.commons import *
+from zenaura.ui.card import Card
+from zenaura.ui.popover import Popover
+from zenaura.ui.commons import Header, Paragraph
+from zenaura.client.component import Component
+
+class PopoverExample(Component):
+  def __init__(self):
+    self.show = False
+
+
+  
+  @mutator
+  async def mouse_enter(self, _):
+    self.show = True
+
+  @mutator
+  async def mouse_exit(self, _):
+    self.show = False
+
+  def render(self):
+    return Popover(
+      Card(
+        [
+          Header1("The yearly Event", "text-light-gray1 text-2xl dark:text-dark-page1"), 
+          Paragraph("The yearly event start at July the start of each year!", "text-light-gray1 dark:text-dark-page1")
+        ], 
+        {}
+      ), 
+      Button(btn_one_class, "hover me", attrs={
+        "py-mouseover": "popover.mouse_enter",
+        "py-mouseleave": "popover.mouse_exit"
+      }), 
+      self.show
+    )
+
+"""

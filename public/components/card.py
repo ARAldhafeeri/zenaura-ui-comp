@@ -10,7 +10,7 @@ def Card(
     default_class="shadow  w-64 me-2 px-2.5 py-0.5 rounded bg-light-white text-light-gray1 dark:text-dark-page1 dark:bg-dark-gray2", 
     ):
     """
-      Displays a form input field. 
+      Displays a a card with content. 
       args:
         content : card content of zenaura components or elements.
         attrs: card attributes.

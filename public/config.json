@@ -30,7 +30,10 @@
           "./public/components/select.py",
           "./public/components/form.py",
           "./public/components/badge.py",
-          "./public/components/card.py"
+          "./public/components/card.py",
+          "./public/components/popover.py",
+          "./public/components/modal.py"
+
         ]
       }
     ],
