@@ -137,5 +137,5 @@ my_app_layout = Layout(
 # sync layout component lifecycle methods
 router.layout = my_app_layout
 
-event_loop.run_until_complete(router.navigate("/menu"))
+event_loop.run_until_complete(router.navigate(ClientRoutes.menu.value))
 
