@@ -19,6 +19,9 @@ DEVSERVER = DevServer(app, port=5000, debug=True)
 @DEVSERVER.app.route(ClientRoutes.card.value)
 @DEVSERVER.app.route(ClientRoutes.popover.value)
 @DEVSERVER.app.route(ClientRoutes.modal.value)
+@DEVSERVER.app.route(ClientRoutes.table.value)
+@DEVSERVER.app.route(ClientRoutes.tabs.value)
+@DEVSERVER.app.route(ClientRoutes.message.value)
 def root():
     try:
         return render_template("index.html")

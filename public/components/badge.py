@@ -7,7 +7,7 @@ from public.styles import main_content, btn_one_class
 def Badge(
     text,
     attrs, 
-    default_class="p-2 text-xs font-medium me-2 px-2.5 py-0.5 rounded bg-light-white text-light-gray1 dark:text-dark-page1 dark:bg-dark-gray2", 
+    default_class="p-2 text-xs font-medium me-2 px-2.5 py-0.5 rounded bg-light-green text-light-gray1 dark:text-dark-page1 dark:bg-dark-gray2", 
     ):
     """
       Displays a form input field. 

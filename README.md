@@ -1,2 +1,2 @@
 # zenaura-ui-comp
-micro frontend of zenaura-ui styled components show case
+zenaura-ui components showcase page.

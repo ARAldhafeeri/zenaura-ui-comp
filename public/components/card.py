@@ -1,6 +1,6 @@
 from public.components.common import *
 from zenaura.client.component import Component
-from public.constants import input_code
+from public.constants import card_code
 from zenaura.client.mutator import mutator
 from public.styles import main_content, btn_one_class
 
@@ -42,7 +42,7 @@ class CardExample(Component):
         "Displays a card with content - customizable default styles",
         "url",
         comp,
-        input_code,
+        card_code,
         self.active_tab,
         "card.toggle_tabs"
       )

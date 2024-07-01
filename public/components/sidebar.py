@@ -112,13 +112,7 @@ def SideBarFeedBack():
          "Message", 
          nav_item_style,
         "side_nav_bar.set_active_comp"
-		),
-		NavItemTextNameFactory(
-         "javascript:;", 
-         "Notification", 
-         nav_item_style,
-         "side_nav_bar.set_active_comp"
-		)   
+		)
   ]
 
 def SideBarOthers():

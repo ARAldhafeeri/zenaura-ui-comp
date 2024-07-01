@@ -242,7 +242,6 @@ class BadgeExample(Component):
 card_code = """ 
 from zenaura.ui.commons import *
 from zenaura.ui.card import Card
-from zenaura.ui.commons import Header, Paragraph
 from zenaura.client.component import Component
 
 class BadgeExample(Component):
@@ -264,7 +263,6 @@ popover_code = """
 from zenaura.ui.commons import *
 from zenaura.ui.card import Card
 from zenaura.ui.popover import Popover
-from zenaura.ui.commons import Header, Paragraph
 from zenaura.client.component import Component
 
 class PopoverExample(Component):
@@ -297,4 +295,176 @@ class PopoverExample(Component):
       self.show
     )
 
+"""
+
+modal_code = """ 
+from zenaura.ui.commons import *
+from zenaura.ui.modal import Modal
+from zenaura.client.component import Component
+
+class ModalExample(Component):
+    def __init__(self):
+        self.show = False
+
+  
+    @mutator
+    async def open(self, _):
+        self.show = True
+
+    @mutator
+    async def close(self, _):
+        self.show = False
+
+    @mutator
+    async def save_changes(self, _):
+        # Add functionality to save changes
+        pass
+
+    def render(self):
+      return Div("flex items-center justify-center", [
+                    Button(btn_one_class, "Open modal", attrs={
+                        "py-click": "modal.open",
+                        "data-hs-overlay": "#hs-basic-modal"
+                    }),
+                Modal(
+                  Div("flex flex-col justify-center shadow", [
+                      Header1("The yearly Event", "text-light-gray1 text-2xl dark:text-dark-page1"), 
+                      Paragraph("The yearly event starts in July at the beginning of each year!", "text-light-gray1 dark:text-dark-page1")
+                  ]),
+                  Button(btn_one_class, "Close", attrs={
+                      "py-click": "modal.close"
+                  }),
+                  self.show
+                )
+                ])
+"""
+
+table_code = """
+from zenaura.ui.commons import *
+from zenaura.ui.table import Table
+from zenaura.client.component import Component
+
+data = [
+    {
+        'key': '1',
+        'name': 'Mike',
+        'age': 32,
+        'address': '10 Downing Street',
+    },
+    {
+        'key': '2',
+        'name': 'John',
+        'age': 42,
+        'address': '10 Downing Street',
+    },
+]
+
+columns = [
+    {
+        'title': 'Name',
+        'index': 'name',
+        'key': 'name',
+    },
+    {
+        'title': 'Age',
+        'index': 'age',
+        'key': 'age',
+    },
+    {
+        'title': 'Address',
+        'index': 'address',
+        'key': 'address',
+    },
+]
+
+class TableExample(Component):  
+    def render(self):
+        return Table(data, columns)
+
+"""
+
+tabs_code = """
+from zenaura.ui.commons import *
+from zenaura.ui.tabs import TabButton, TabContent, Tabs
+from zenaura.client.component import Component
+
+class TabsExample(Component):
+    def __init__(self):
+        self.active_tab_example = "1"
+
+  
+    @mutator
+    async def active(self, event):
+        self.active_tab_example = event.target.name
+
+    def render(self):
+        tabs_btns =  [
+              TabButton(
+                "1", 
+                "One", 
+                self.active_tab_example, 
+                "tabs.active", 
+                with_theme_colors_text_no_hover(
+                  f"px-4 py-2 transition-all duration-300"
+                  )
+              ),
+              TabButton(
+                "2", 
+                "two", 
+                self.active_tab_example, 
+                "tabs.active", 
+                with_theme_colors_text_no_hover(
+                  f"px-4 py-2 transition-all duration-300"
+                  )
+                ),
+              TabButton(
+                "3", 
+                "three", 
+                self.active_tab_example, 
+                "tabs.active", 
+                with_theme_colors_text_no_hover(
+                  f"px-4 py-2 transition-all duration-300"
+                  )
+                ),
+            ]
+        tabs_content = [
+          TabContent("1", self.active_tab_example, Header1("one", "")),
+          TabContent("2", self.active_tab_example, Header1("two", "")),
+          TabContent("3", self.active_tab_example, Header1("three", ""))
+        ]
+        
+        return Tabs(tabs_btns, tabs_content)
+
+"""
+
+message_code = """
+from zenaura.ui.commons import *
+from zenaura.ui.message import Message
+from zenaura.client.component import Component
+
+class MessageExample(Component):
+    def __init__(self):
+        self.show = False
+  
+    @mutator
+    async def open(self, _):
+        self.show = True
+
+    @mutator
+    async def close(self, _):
+        self.show = False
+
+    @mutator
+    async def save_changes(self, _):
+        # Add functionality to save changes
+        pass
+
+    def render(self):
+        return Div("", [
+            Button(btn_one_class, "show message", attrs={
+                "py-click": "message.open",
+                "data-hs-overlay": "#hs-basic-modal"
+            }),
+            Message(Paragraph("this is a message", ""), "message.close", self.show)
+        ])
 """

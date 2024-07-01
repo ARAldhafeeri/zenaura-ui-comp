@@ -18,6 +18,9 @@ from public.components.badge import BadgeExample
 from public.components.card import CardExample
 from public.components.popover import PopoverExample
 from public.components.modal import ModalExample
+from public.components.table import TableExample
+from public.components.tabs import TabsExample
+from public.components.message import MessageExample
 
 try :
     from pyscript import window, document
@@ -45,6 +48,9 @@ badge = BadgeExample()
 card = CardExample()
 popover = PopoverExample()
 modal = ModalExample()
+table = TableExample()
+tabs = TabsExample()
+message = MessageExample()
 
 routes = [
   (
@@ -96,6 +102,21 @@ routes = [
     "modal component",
     ClientRoutes.modal.value,
     Page([modal])
+  ),
+  (
+     "table component",
+     ClientRoutes.table.value,
+     Page([table])
+  ),
+  (
+     "tabs component",
+     ClientRoutes.tabs.value,
+     Page([tabs])
+  ),
+  (
+    "message component",
+    ClientRoutes.message.value,
+    Page([message])
   ),
 ]
 

@@ -12,3 +12,6 @@ class ClientRoutes(Enum):
     card="/card"
     popover="/popover"
     modal="/modal"
+    table="/table"
+    tabs="/tabs"
+    message="/message"

@@ -32,7 +32,11 @@
           "./public/components/badge.py",
           "./public/components/card.py",
           "./public/components/popover.py",
-          "./public/components/modal.py"
+          "./public/components/modal.py",
+          "./public/components/table.py",
+          "/public/components/tabs.py",
+          "/public/components/message.py"
+
 
         ]
       }
