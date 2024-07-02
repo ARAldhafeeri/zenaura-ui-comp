@@ -20,11 +20,12 @@ ZenauraServer.hydrate_app_layout(my_app_layout, scripts=[
         <script>
         window.addEventListener('message', (e) => {
         let data = e.data
+        console.log("message", data)
         if (data === 'light-theme') {
-            doc.documentElement.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
 
         } else {
-            doc.documentElement.classList.add('dark');
+            document.documentElement.classList.add('dark');
 
         }
         })

@@ -6,7 +6,7 @@ from zenaura.server import DevServer
 
 app = Flask(__name__, static_folder="public", template_folder="public")
 
-DEVSERVER = DevServer(app, port=5000, debug=True)
+DEVSERVER = DevServer(app, port=5001, debug=True)
 
 @DEVSERVER.app.route(ClientRoutes.menu.value)
 @DEVSERVER.app.route(ClientRoutes.home.value)
