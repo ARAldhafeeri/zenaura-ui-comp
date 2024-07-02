@@ -30,14 +30,12 @@
 
         <script>
         window.addEventListener('message', (e) => {
-        let data = e.data
-        if (data === 'light-theme') {
-            doc.documentElement.classList.remove('dark');
-
-        } else {
-            doc.documentElement.classList.add('dark');
-
-        }
+          let data = e.data
+          if (data === 'light-theme') {
+              document.documentElement.classList.remove('dark');
+          } else {
+              document.documentElement.classList.add('dark');
+          }
         })
         </script>
         
