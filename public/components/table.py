@@ -86,7 +86,7 @@ class TableExample(Component):
           StyledComponentPresentation(
             "Table",
             "Displays a table component that receive data, columns then display them",
-            "url",
+            "https://araldhafeeri.github.io/Zenaura/api/ui/table/",
             comp,
             input_code,
             self.active_tab,

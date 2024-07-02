@@ -22,7 +22,7 @@ class ButtonExample(Component):
       StyledComponentPresentation(
         "Button",
         "Displays button with custom sytles, event handler",
-        "url",
+        "https://araldhafeeri.github.io/Zenaura/api/ui/button/",
         button,
         btn_code,
         self.active_tab,

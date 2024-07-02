@@ -82,7 +82,7 @@ class SelectExample(Component):
       StyledComponentPresentation(
         "Select",
         "Displays select with option form field with custom sytles, event handler",
-        "url",
+        "https://araldhafeeri.github.io/Zenaura/api/ui/select/",
         select,
         select_code,
         self.active_tab,

@@ -34,7 +34,7 @@ class BadgeExample(Component):
       StyledComponentPresentation(
         "Badge",
         "Displays a bdage with specific text with customizable default styles",
-        "url",
+        "https://araldhafeeri.github.io/Zenaura/api/ui/badge/",
         badge,
         badge_code,
         self.active_tab,

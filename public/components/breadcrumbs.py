@@ -64,7 +64,7 @@ class BreadcrumbsExample(Component):
       StyledComponentPresentation(
       "Breadcrumbs",
       "Display the path to the current resources as hierarchy of links",
-      "url",
+      "https://araldhafeeri.github.io/Zenaura/api/ui/breadcrumbs/",
       breadcrumbs,
       breadcrumbs_code,
       self.active_tab,

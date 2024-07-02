@@ -113,7 +113,7 @@ class TabsExample(Component):
           StyledComponentPresentation(
             "Tabs",
             "Displays a Tabs component - display content within tabs",
-            "url",
+            "https://araldhafeeri.github.io/Zenaura/api/ui/select/",
             comp,
             tabs_code,
             self.active_tab,

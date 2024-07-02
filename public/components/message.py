@@ -61,7 +61,7 @@ class MessageExample(Component):
           StyledComponentPresentation(
             "Message",
             "Displays a temp message on the screen with exit button",
-            "url",
+            "https://araldhafeeri.github.io/Zenaura/api/ui/message/",
             comp,
             message_code,
             self.active_tab,

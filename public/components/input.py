@@ -59,7 +59,7 @@ class InputExample(Component):
       StyledComponentPresentation(
         "Input",
         "Displays input form field with custom sytles, event handler",
-        "url",
+        "https://araldhafeeri.github.io/Zenaura/api/ui/input/",
         input,
         input_code,
         self.active_tab,

@@ -100,7 +100,7 @@ class MenuExample(Component):
       StyledComponentPresentation(
       "Menu",
       "Display a menu to the user - triggered by py-click",
-      "url",
+      "https://araldhafeeri.github.io/Zenaura/api/ui/menu/",
       menu,
       menu_component_code,
       self.active_tab,

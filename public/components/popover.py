@@ -68,7 +68,7 @@ class PopoverExample(Component):
       StyledComponentPresentation(
         "Popover",
         "Displays a content that toggle popover on mouse enter, mouse leave",
-        "url",
+        "https://araldhafeeri.github.io/Zenaura/api/ui/popover/",
         comp,
         popover_code,
         self.active_tab,

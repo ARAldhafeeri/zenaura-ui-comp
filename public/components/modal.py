@@ -67,7 +67,7 @@ class ModalExample(Component):
           StyledComponentPresentation(
             "Modal",
             "Displays a content that toggle popover on mouse enter, mouse leave",
-            "url",
+            "https://araldhafeeri.github.io/Zenaura/api/ui/modal/",
             comp,
             modal_code,
             self.active_tab,

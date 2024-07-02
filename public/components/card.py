@@ -40,7 +40,7 @@ class CardExample(Component):
       StyledComponentPresentation(
         "Card",
         "Displays a card with content - customizable default styles",
-        "url",
+        "https://araldhafeeri.github.io/Zenaura/api/ui/card/",
         comp,
         card_code,
         self.active_tab,

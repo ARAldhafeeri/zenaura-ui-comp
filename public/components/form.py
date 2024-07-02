@@ -82,7 +82,7 @@ class FormExample(Component):
       StyledComponentPresentation(
         "Form",
         "Displays a form with zenaura data entry components, with a submit",
-        "url",
+        "https://araldhafeeri.github.io/Zenaura/api/ui/form/",
         form,
         form_code,
         self.active_tab,
